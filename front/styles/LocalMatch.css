@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/diablo');
+
+.bodyy {
+    font-family: 'diablo', sans-serif;
+    background: url('../images/lloginpic.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.789);
+    z-index: 1;
+}
+
+canvas {
+    display: block;
+    background: transparent; /* Grey to black gradient */
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.3);
+}
+
+.game-container {
+    width: 1000px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 4px #ff000095; /* Vibrant red border */
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Black to grey gradient */
+    padding: 20px;
+    animation: pulse-border 2s infinite;
+    z-index: 2;
+    transition: transform 0.5s ease;
+    transform: scale(0.9);
+}
+
+.game-header{
+    width: 100%;
+    text-align: center;
+    height: 30px;
+    font-size: 1.5rem;
+    background-color: transparent;
+    z-index: 3;
+}
+
+.game-header button {
+    padding: 5px;
+    display: inline-block;
+    font-size: 15px;
+}
+
+.game-header button:hover {
+    background-color: #cc0000;
+} 
+
+@keyframes pulse-border {
+    0%, 100% {
+        border-color: #f6e9e9c6; /* Red */
+        box-shadow: 0px 10px 20px rgba(242, 239, 239, 0.619);
+    }
+    50% {
+        border-color: #f6e9e9c6; /* Darker red */
+        box-shadow: 0px 10px 30px rgba(242, 239, 239, 0.619);
+    }
+}
+
+.game-header button{
+    font-size: 15px;
+    padding: 10px 20px;
+    background-color: #922525;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    z-index: 10;
+}
+
+.game-over-text {
+    font-size: 3rem;
+    color: #ff0000; /* Vibrant red */
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(179, 0, 0, 0.8);
+    animation: glow-text 1.5s infinite;
+}
+
+@keyframes glow-text {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(179, 0, 0, 0.8);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(179, 0, 0, 1), 0 0 30px rgba(255, 0, 0, 1);
+    }
+}
+
+.go-to-tournament-btn {
+    position: absolute;
+    width: 250px;
+    padding: 5px;
+    display: inline-block;
+    font-size: 16px;
+    background-color: #922525;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    white-space: wrap;
+    bottom: 0;
+}
+
+.go-to-tournament-btn:hover {
+    background-color: #cc0000;
+}
+
+.player-names {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+}
